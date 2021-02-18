@@ -5,11 +5,11 @@ const app = express();
 require("dotenv/config");
 
 const postsRoute = require("./routes/posts");
-
+const port = process.env.port || 3000;
 app.use(bodyparser.json());
 app.use("/posts", postsRoute);
 
-app.listen(3000);
+app.listen(port);
 
 // app.use('/posts',function(){
 //     console.log("middleware logic will run here each and everytime the api is called")
