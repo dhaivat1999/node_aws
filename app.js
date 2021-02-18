@@ -9,7 +9,10 @@ const port = process.env.port || 3000;
 app.use(bodyparser.json());
 app.use("/posts", postsRoute);
 
-app.listen(port);
+app.listen(port, ()=>{
+  console.log("Connected to server");
+});
+
 
 // app.use('/posts',function(){
 //     console.log("middleware logic will run here each and everytime the api is called")
