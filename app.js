@@ -5,9 +5,11 @@ const app = express();
 require("dotenv/config");
 
 const postsRoute = require("./routes/posts");
+const receipeRoute = require("./routes/recipes");
 const port = process.env.port || 3000;
 app.use(bodyparser.json());
 app.use("/posts", postsRoute);
+app.use("/recipes",receipeRoute);
 
 app.listen(port, ()=>{
   console.log("Connected to server");
@@ -25,3 +27,7 @@ mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true }, () => {
 app.get("/", (req, res) => {
   res.send("Home page");
 });
+
+//"start": "NODE_ENV=production node app.js"
+
+//package.json prod remember before sending it to aws

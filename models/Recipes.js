@@ -10,7 +10,11 @@ const postSchema = mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  imageUrl: {
+    type: String,
+    required:true,
+  },
+  ingredients: String,
 });
 
-
-module.exports = mongoose.model('Posts',postSchema);
+module.exports = mongoose.model("Recipes", postSchema);
