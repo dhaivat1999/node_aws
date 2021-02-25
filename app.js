@@ -6,13 +6,13 @@ const app = express();
 
 require("dotenv/config");
 // app.use(cors());
-app.use(bodyparser.json());
-app.use("/posts", postsRoute);
-app.use("/recipes",receipeRoute);
+
 const postsRoute = require("./routes/posts");
 const receipeRoute = require("./routes/recipes");
 const port = process.env.port ||8080 ;
-
+app.use(bodyparser.json());
+app.use("/posts", postsRoute);
+app.use("/recipes",receipeRoute);
 
 
 app.listen(port, ()=>{
